@@ -1,6 +1,103 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Rubik', sans-serif;
 }
+
+/* ____________________________________________HEADER_____________________________________________ */
+
+.header {
+  padding: 20px;
+  letter-spacing: 8px;
+  cursor: pointer;
+}
+
+.header:hover {
+  color: gray;
+  transition: .4s;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  color: whitesmoke;
+  background: #000;
+  padding-left: 20px;
+  width: 100%;
+}
+
+.header-menu {
+  display: flex;
+  flex-direction: row;
+  padding-top: 20px;
+}
+
+.hunter-title, .bounties-title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 12px;
+  padding-left: 12px;
+  font-size: 22px;
+  letter-spacing: 2px;
+  color: #fff;
+  background: #000;
+  width: 14rem;
+  cursor: pointer;
+}
+
+.hunter-title:hover, .bounties-title:hover {
+  color: gray;
+  transition: .4s;
+}
+
+.hunter-container, .bounties-container {
+  color: #fff;
+  background: #000;
+}
+
+.hunter-list-options, .bounties-list-options {
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 12px;
+  font-size: 16px;
+  letter-spacing: 2px;
+  color: skyblue;
+  background: #000;
+  cursor: pointer;
+}
+
+.hunter-list-options:hover, .bounties-list-options:hover {
+  color: gray;
+  transition: .4s;
+}
+
+
+.small {
+  font-weight: 300;
+  font-style: italic;
+}
+
+/* __________________________________________HOME______________________________________________ */
+
+.home-content{
+  display: flex;
+  flex-direction: column;
+  background: #000;
+  height: 100%vh;
+}
+
+
+
+
+
+
+
+
+
+
 
 h1,
 h2,
@@ -9,9 +106,4 @@ h4,
 h5,
 h6 {
   font-family: 'Rubik Mono One', sans-serif;
-}
-
-.small {
-  font-weight: 300;
-  font-style: italic;
 }
