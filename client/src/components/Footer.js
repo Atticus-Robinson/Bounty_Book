@@ -7,12 +7,7 @@ const Footer = () => {
     <footer className="footer container-fluid">
       <div className="line-position">
         <h5 className="navbar-text">
-          UI created using{" "}
-          <img
-            className="svg"
-            src={ReactIcon}
-            alt="react"            
-          />
+          UI created using <img className="svg" src={ReactIcon} alt="react" />
           &trade; React
         </h5>
       </div>
