@@ -6,10 +6,10 @@ const Footer = () => {
   return (
     <footer className="footer container-fluid">
       <div className="line-position">
-        <h5 className="navbar-text">
+        <p className="navbar-text">
           UI created using <img className="svg" src={ReactIcon} alt="react" />
           &trade; React
-        </h5>
+        </p>
       </div>
 
       <ul className="footer-icons">
@@ -49,10 +49,10 @@ const Footer = () => {
       </ul>
 
       <div className="line-position">
-        <h5 className="navbar-text">
+        <p className="navbar-text">
           {" "}
           All Rights Reserved &copy; Bounty Book 2022{" "}
-        </h5>
+        </p>
       </div>
     </footer>
   );

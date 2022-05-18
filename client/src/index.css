@@ -3,14 +3,20 @@
 }
 
 body, html {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
   font-family: 'Rubik', sans-serif;
   margin: 0;
+  height: 100vh;
   color: #000;
 }
 
 /* ____________________________________________HEADER_____________________________________________ */
 
 .header {
+  display: flex;
+  flex-wrap: wrap;
   padding: 50px;
   letter-spacing: 10px;
   cursor: pointer;
@@ -23,6 +29,8 @@ body, html {
 
 .header-content {
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-between;
   color: whitesmoke;
   background: #000;
@@ -37,6 +45,8 @@ body, html {
   flex-direction: row;
   padding-top: 50px;
   padding-right: 40px;
+  background-color: transparent;
+  overflow: hidden;
 }
 
 .hunter-title, .bounties-title {
@@ -48,7 +58,7 @@ body, html {
   font-size: 22px;
   letter-spacing: 2px;
   color: #fff;
-  background: #000;
+  background-color: transparent;
   width: 14rem;
   cursor: pointer;
 }
@@ -90,6 +100,7 @@ body, html {
 
 .content-window {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   padding: 40px;
@@ -104,12 +115,19 @@ body, html {
 
 .login-form, .signup-form {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   color: whitesmoke;
   height: 50%;
   padding: 20px 20px;
-  margin: 100px;
-  
+  margin: 20px 50px 20px 50px;
+}
+
+.access-title {
+  color: whitesmoke;
+  font-size: 26px;
+  letter-spacing: 3px;
+  padding-bottom: 8px;
 }
 
 .btn {
@@ -132,13 +150,21 @@ body, html {
 .footer {
   width: 100%;
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 0 50px;
+  letter-spacing: 3px;
+  padding: 20px 50px 0 50px;
+  margin-bottom: 0;
   color: gray;
   background-color: #000;
+}
+
+.footer.container-fluid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 .footer  ul {
@@ -150,7 +176,6 @@ body, html {
 .footer-icons {
   display: flex;
   justify-content: space-around;
-  align-items: center;
   font-size: 24px;
   width: 150px;
   padding: 0
@@ -158,6 +183,7 @@ body, html {
 
 .footer a {
   color: gray;
+  font-size: 28px;
 }
 
 .footer a:hover {

@@ -49,6 +49,7 @@ const LoginForm = () => {
 
   return (
     <div className="login-form">
+      
       <Form
         className="form"
         noValidate
@@ -64,6 +65,7 @@ const LoginForm = () => {
           Something went wrong with your login credentials!
         </Alert>
         <Form.Group>
+        <h3 className="access-title">Login</h3>
           <Form.Label htmlFor="email">Email</Form.Label>
           <Form.Control
             type="text"
