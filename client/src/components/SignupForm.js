@@ -68,7 +68,7 @@ const SignupForm = () => {
         </Alert>
 
         <Form.Group>
-        <h3 className="access-title">Sign Up</h3>
+          <h3 className="access-title">Sign Up</h3>
           <Form.Label htmlFor="username">Username</Form.Label>
           <Form.Control
             type="text"

@@ -2,10 +2,8 @@
   box-sizing: border-box;
 }
 
-body, html {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
+body {
+  display: block;
   font-family: 'Rubik', sans-serif;
   margin: 0;
   height: 100vh;
@@ -17,13 +15,14 @@ body, html {
 .header {
   display: flex;
   flex-wrap: wrap;
+  color: #9b0101;
   padding: 50px;
   letter-spacing: 10px;
   cursor: pointer;
 }
 
 .header:hover {
-  color: #9b0101;
+  color: #cf3636;
   transition: .4s;
 }
 
@@ -102,8 +101,7 @@ body, html {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
-  padding: 40px;
+  padding: 100px 20px 40px 20px;
   background-color: black;
   background-image:url('./images/bountyHunter.jpg');
   background-repeat: no-repeat;
@@ -113,12 +111,22 @@ body, html {
 
 /* ________________________________________Login Form_________________________________________ */
 
-.login-form, .signup-form {
+.login-form {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   color: whitesmoke;
   height: 50%;
+  padding: 20px 20px;
+  margin: 20px 50px 20px 50px;
+}
+
+.signup-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  color: whitesmoke;
+  height: 65%;
   padding: 20px 20px;
   margin: 20px 50px 20px 50px;
 }
@@ -205,7 +213,77 @@ body, html {
   bottom: 12px;
 }
 
+/* ______________________________________MEDIA QUERIES_____________________________________ */
 
+@media only screen and (max-width: 600px) {
+  .body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+  }
+
+  .header {
+    padding-top: 40px;
+    padding-bottom: 0;
+  }
+  
+  .header-content {
+    display: flex;
+    justify-content: center;
+    height: 150px;  
+  }
+
+  .header-menu {
+    padding: 0;
+    padding-top: 0;
+    padding-left: 14px; 
+  }
+
+  .hunter-title, .bounties-title {
+    /* margin-bottom: 50px; */
+    
+  }
+
+  .content-window {
+    display: block;
+    height: 100vh;
+    overflow: auto;
+  }
+
+  .footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: auto;
+    padding: 20%;
+  }
+
+  .footer.container-fluid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 20px 80px;
+    align-items: center;
+    margin: 0;
+  }
+
+  .navbar-text {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .header-menu {
+    display: flex;
+    flex: 2 80;
+    
+  }
+}
 
 
 
