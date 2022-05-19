@@ -18,7 +18,7 @@ const DropDownList = styled("ul")`
   background: transparent;
   box-sizing: border-box;
   color: slategray;
-  font-size: 1.3rem;
+  // font-size: 1.3rem;
   &:first-child {
     padding-top: 0.8em;
   }
@@ -26,7 +26,7 @@ const DropDownList = styled("ul")`
 
 const ListItem = styled("li")`
   list-style: none;
-  font-weight: 700;
+  // font-weight: 700;
   margin-bottom: 0.8em;
 `;
 

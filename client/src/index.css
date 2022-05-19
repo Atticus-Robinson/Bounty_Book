@@ -2,6 +2,12 @@
   box-sizing: border-box;
 }
 
+:root {
+  --primary-red: #9b0101;
+  --hover-red: #cf3636;
+  --my-white: #f5f5f5;
+}
+
 body {
   display: block;
   font-family: 'Rubik', sans-serif;
@@ -15,14 +21,14 @@ body {
 .header {
   display: flex;
   flex-wrap: wrap;
-  color: #9b0101;
+  color: var(--primary-red);
   padding: 50px;
   letter-spacing: 10px;
   cursor: pointer;
 }
 
 .header:hover {
-  color: #cf3636;
+  color: var(--hover-red);
   transition: .4s;
 }
 
@@ -31,7 +37,7 @@ body {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-  color: whitesmoke;
+  color: var(--my-white);
   background: #000;
   border-bottom: 1px solid darkgray;
   padding-left: 20px;
@@ -63,7 +69,7 @@ body {
 }
 
 .hunter-title:hover, .bounties-title:hover {
-  color: #9b0101;
+  color: var(--primary-red);
   transition: .4s;
 }
 
@@ -79,13 +85,13 @@ body {
   padding-left: 12px;
   font-size: 16px;
   letter-spacing: 2px;
-  color: whitesmoke;
+  color: var(--my-white);
   background: transparent;
   cursor: pointer;
 }
 
 .hunter-list-options:hover, .bounties-list-options:hover {
-  color: #9b0101;
+  color: var(--primary-red);
   transition: .4s;
 }
 
@@ -95,60 +101,67 @@ body {
   font-style: italic;
 }
 
-/* __________________________________________HOME______________________________________________ */
+/* __________________________________________CONTENT______________________________________________ */
 
 .content-window {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   padding: 100px 20px 40px 20px;
-  background-color: black;
+  background-color: #000;
   background-image:url('./images/bountyHunter.jpg');
   background-repeat: no-repeat;
   background-size: 1600px 800px;
   height: 100vh;
+  overflow-y: scroll;
+}
+
+.content-window {
+  -ms-overflow-style: non;
+  scrollbar-width: none;
+}
+
+.content-window::-webkit-scrollbar {
+  display: none;
 }
 
 /* ________________________________________Login Form_________________________________________ */
 
 .login-form {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  color: whitesmoke;
-  height: 50%;
+  color: var(--my-white);
+  height: 65%;
+  width: 50%;
   padding: 20px 20px;
-  margin: 20px 50px 20px 50px;
+  margin: 20px 100px 20px 100px;
 }
 
 .signup-form {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  color: whitesmoke;
+  color: var(--my-white);
   height: 65%;
+  width: 50%;
   padding: 20px 20px;
-  margin: 20px 50px 20px 50px;
+  margin: 20px 80px 20px 80px;
 }
 
 .access-title {
-  color: whitesmoke;
-  font-size: 26px;
-  letter-spacing: 3px;
-  padding-bottom: 8px;
+  color: var(--my-white);
+  font-size: 30px;
+  font-family: sans-serif;
+  letter-spacing: 6px;
+  padding-bottom: 18px;
 }
 
 .btn {
-  color: whitesmoke;
-  background: #9b0101;
-  width: 250px;
-  border: 1px solid #9b0101;
+  color: var(--my-white);
+  background: var(--primary-red);
+  width: 100%;
+  border: 1px solid var(--primary-red);
   border-radius: 5px;
 }
 
 .btn:hover {
   color: white;
-  background: #cf3636;
+  background: var(--hover-red);
   transition: .4s;
   font-size: 18px
 }
@@ -195,7 +208,7 @@ body {
 }
 
 .footer a:hover {
-  color: #9b0101;
+  color: var(--primary-red);
   transition: .4s;
 }
 
@@ -215,83 +228,119 @@ body {
 
 /* ______________________________________MEDIA QUERIES_____________________________________ */
 
-@media only screen and (max-width: 600px) {
-  .body {
+@media only screen and (max-width: 1028px) {
+
+  html, body {
     display: flex;
     flex-direction: column;
+    background: #000;
+    flex-direction: row;
+    margin-bottom: 0;
     height: 100vh;
-    margin: 0;
   }
 
   .header {
-    padding-top: 40px;
+    font-size: 45px;
     padding-bottom: 0;
+    padding-left: 35px;
   }
-  
+
   .header-content {
     display: flex;
-    justify-content: center;
-    height: 150px;  
+    padding-left: 0px;
+    justify-content: space-around;
+    border: none;
+    height: 30vh;
   }
 
   .header-menu {
-    padding: 0;
-    padding-top: 0;
-    padding-left: 14px; 
+    display: flex;
+    flex-direction: row;
+    padding-top: 12px;
+    padding-left: 45px;
+    padding-bottom: 50px;
+    justify-content: center;
   }
 
   .hunter-title, .bounties-title {
-    /* margin-bottom: 50px; */
-    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-center;
+    font-size: 26px;
+    margin: 0;
+    padding-left: 0;
+  }
+
+  .hunter-container, .bounties-container {
+    padding-top: 0;
+    width: 72px;
+  }
+
+  .hunter-list-options, .bounties-list-options {
+    font-size: 16px;
+    padding-left: 0;
+    margin: 0;
   }
 
   .content-window {
+    padding: 0px;
+    padding-top: 40px;
+    overflow: scroll;
+    height: 100%;
+  }
+
+  .login-form {
     display: block;
-    height: 100vh;
-    overflow: auto;
+    color: var(--my-white);
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .signup-form {
+    display: block;
+    color: var(--my-white);
+  }
+
+  .btn {
+    color: var(--my-white);
+    background: var(--primary-red);
+    width: 100%;
+    border: 1px solid var(--primary-red);
+    border-radius: 5px;
   }
 
   .footer {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin: auto;
-    padding: 20%;
+    margin-bottom: 0;
   }
 
   .footer.container-fluid {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    padding-bottom: 30px;
+    padding-left: 0;
+    padding-right: 0px;
     flex-wrap: wrap;
-    padding: 20px 80px;
-    align-items: center;
+  }
+
+  .footer-icons {
     margin: 0;
+    padding: 0;
   }
 
   .navbar-text {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    text-align: center;
     margin: 0;
+    padding: 0;
+  }
+
+  .footer a {
+    font-size: 70px;
+    padding-left: 30px;
+    padding-right: 30px;
   }
 }
 
-@media only screen and (max-width: 1024px) {
-  .header-menu {
-    display: flex;
-    flex: 2 80;
-    
-  }
-}
-
-
-
-
-
-
-
-
+/* _________________________________________GLOBAL FONT______________________________________ */
 
 h1,
 h2,
