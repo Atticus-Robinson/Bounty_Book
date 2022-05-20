@@ -32,7 +32,6 @@ const ListItem = styled("li")`
 
 const options = ["Location", "Price Range"];
 
-
 const HunterMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState(null);
@@ -47,7 +46,6 @@ const HunterMenu = () => {
 
   return (
     <nav>
-      
       <Section>
         <DropDownContainer>
           <DropDownHeader className="hunter-title" onClick={toggling}>
@@ -57,7 +55,8 @@ const HunterMenu = () => {
             <DropDownListContainer className="hunter-container">
               <DropDownList>
                 {options.map((option) => (
-                  <ListItem className="hunter-list-options"
+                  <ListItem
+                    className="hunter-list-options"
                     onClick={onOptionClicked(option)}
                     key={Math.random()}
                   >
@@ -70,8 +69,6 @@ const HunterMenu = () => {
         </DropDownContainer>
       </Section>
     </nav>
-
-    
   );
 };
 

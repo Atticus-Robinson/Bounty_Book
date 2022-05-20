@@ -5,7 +5,10 @@ import SignUpForm from "./SignupForm";
 import LoginForm from "./LoginForm";
 
 import Auth from "../utils/auth";
-const Navbar = () => {
+
+function Navbar(props) {
+  const { currentTab, setCurrentTab } = props;
+
   return (
     <div className="header-content">
       <h1 className="header">BountyBook</h1>
@@ -13,8 +16,15 @@ const Navbar = () => {
         <HunterMenu />
         <BountiesMenu />
       </div>
+      <nav className="pli">
+        <ul>
+          <li className={currentTab === "Find a Hunter" ? "navActive" : "mx-2"}>
+            <span onClick={() => setCurrentTab("profile")}>Find A Hunter</span>
+          </li>
+        </ul>
+      </nav>
     </div>
   );
-};
+}
 
 export default Navbar;

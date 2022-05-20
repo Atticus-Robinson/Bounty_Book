@@ -166,6 +166,111 @@ body {
   font-size: 18px
 }
 
+/* _____________________________________HUNTER PROFILE PAGE____________________________________ */
+
+.profiles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 100px 20px 40px 20px;
+  background-color: #000;
+  background-image:url('./images/bountyHunter.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  overflow-y: scroll;
+  gap: 40px;
+  overflow-y: scroll;
+}
+
+.profiles {
+  -ms-overflow-style: non;
+  scrollbar-width: none;
+}
+
+.profiles::-webkit-scrollbar {
+  display: none;
+}
+
+.profile-title {
+  display: inline-block;
+  text-align: center;
+  color: #000;
+  background: #000;
+  font-size: 18px;
+  padding-top: 8px;
+  letter-spacing: .2rem;
+}
+
+.profile-title h1 {
+  font-size: 24px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: var(--primary-red);
+  background: #000;
+  border-bottom: 1px solid black;
+  border-radius: 15px;
+  margin-bottom: 0;
+}
+
+.profile-card {
+  color: var(--my-white);
+  flex-basis: 225px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  padding: 13px;
+  padding-bottom: 20px;
+  background-color: transparent;
+}
+
+.profile-card img {
+  width: 300px;
+  height: auto;
+  align-self: center;
+  border-radius: 5px;
+  padding-bottom: 12px;
+  object-fit: cover;
+}
+
+.profile-card h3 {
+  font-family: sans-serif;
+  font-size: 28px;
+}
+
+.info-group {
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.info-group > p {
+  font-size: 18px;
+  letter-spacing: 1px;
+  line-height: 1.5;
+  margin-block: 3px;
+  color: var(--my-white);
+}
+
+.profile-link a {
+  color: darkgray;
+  padding: 8px;
+  font-size: 46px;
+}
+
+.profile-link a:hover {
+  color: var(--primary-red);
+  transition: .4s;
+}
+
+.pli li {
+  list-style-type: none;
+  color: rgb(75, 75, 75);
+  cursor: pointer;
+} 
+
+
 /* ___________________________________________FOOTER___________________________________________*/
 
 .footer {
