@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import HunterProfilePage from "./components/HunterProfilePage";
+import OpenBountiesPage from "./components/OpenBountiesPage";
 
 import HomePage from "./components/HomePage";
 
@@ -15,6 +16,8 @@ function App() {
         return <HomePage />;
       case "profile":
         return <HunterProfilePage />;
+      case "open-bounties":
+        return <OpenBountiesPage />;
     }
   };
 

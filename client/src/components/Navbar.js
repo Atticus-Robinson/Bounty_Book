@@ -21,6 +21,11 @@ function Navbar(props) {
           <li className={currentTab === "Find a Hunter" ? "navActive" : "mx-2"}>
             <span onClick={() => setCurrentTab("profile")}>Find A Hunter</span>
           </li>
+          <li className={currentTab === "Open Bounties" ? "navActive" : "mx-2"}>
+            <span onClick={() => setCurrentTab("open-bounties")}>
+              Open Bounties
+            </span>
+          </li>
         </ul>
       </nav>
     </div>
