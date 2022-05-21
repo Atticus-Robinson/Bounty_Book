@@ -1,57 +1,37 @@
 const { Schema, model } = require("mongoose");
-const bcrypt = require("bcrypt");
 
-// import schema from Book.js
-const postSchema = require("./Bounties");
-
-const userSchema = new Schema(
+const UserSchema = new Schema(
   {
     username: {
       type: String,
       required: true,
-      unique: true,
+      trim: true,
     },
-    email: {
-      type: String,
+    status: {
+      type: Boolean,
       required: true,
-      unique: true,
-      match: [/.+@.+\..+/, "Must use a valid email address"],
+      default: false,
     },
-    password: {
+    picture: {
       type: String,
-      required: true,
+      required: false,
     },
-    // set savedBooks to be an array of data that adheres to the postSchema
-    postedBounties: [postSchema],
+    bounties: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Post",
+      },
+    ],
   },
-  // set this to use virtual below
   {
     toJSON: {
-      virtuals: true,
+      virutals: true,
+      getters: true,
     },
+    id: false,
   }
 );
 
-// hash user password
-userSchema.pre("save", async function (next) {
-  if (this.isNew || this.isModified("password")) {
-    const saltRounds = 10;
-    this.password = await bcrypt.hash(this.password, saltRounds);
-  }
-
-  next();
-});
-
-// custom method to compare and validate password for logging in
-userSchema.methods.isCorrectPassword = async function (password) {
-  return bcrypt.compare(password, this.password);
-};
-
-// when we query a user, we'll also get another field called `bookCount` with the number of saved books we have
-userSchema.virtual("bountyCount").get(function () {
-  return this.postedBounties.length;
-});
-
-const User = model("User", userSchema);
+const User = model("User", UserSchema);
 
 module.exports = User;
