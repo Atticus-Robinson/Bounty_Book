@@ -271,12 +271,15 @@ class LocationPage extends Component {
 
   render() {
     return (
-      <div className="location" id="location">
-        <USAMap
-          customize={this.statesCustomConfig()}
-          onClick={this.mapHandler}
-        />
-      </div>
+      <section className="location-title" id="location">
+        <h1>Find By Location</h1>
+        <div className="location">
+          <USAMap
+            customize={this.statesCustomConfig()}
+            onClick={this.mapHandler}
+          />
+        </div>
+      </section>
     );
   }
 }

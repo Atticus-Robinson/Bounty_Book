@@ -61,7 +61,7 @@ body {
   align-items: center;
   justify-content: space-around;
   margin: 0;
-  padding: 0;
+  padding-left: 16px;
   width: 35rem;;
 }
 
@@ -547,6 +547,8 @@ h6 {
   font-style: italic;
 }
 
+/* ______________________________________________________LOCATION______________________________________________________ */
+
 .location {
   display: flex;
   flex-wrap: wrap;
@@ -555,8 +557,9 @@ h6 {
   background-color: #000;
   background-image:url('./images/bountyHunter.jpg');
   background-repeat: no-repeat;
-  background-size: 1600px 800px;
+  background-size: cover;
   height: 100vh;
+  width: 100%;
   overflow-y: scroll;
 }
 
@@ -567,6 +570,28 @@ h6 {
 
 .location::-webkit-scrollbar {
   display: none;
+}
+
+.location-title {
+  display: inline-block;
+  text-align: center;
+  color: #000;
+  background: #000;
+  font-size: 18px;
+  padding-top: 8px;
+  width: 100%;
+  letter-spacing: .2rem;
+}
+
+.location-title h1 {
+  font-size: 24px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: var(--primary-red);
+  background: #000;
+  border-bottom: 1px solid black;
+  border-radius: 15px;
+  margin-bottom: 0;
 }
 
 path {
