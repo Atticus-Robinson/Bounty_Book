@@ -41,8 +41,3 @@ const typeDefs = gql`
 `;
 
 module.exports = typeDefs;
-
-// bookId is the ID returned from Google's Book API
-// authors is an array of strings
-
-// Used an input type for saveBook---New - Potential problem spot.
