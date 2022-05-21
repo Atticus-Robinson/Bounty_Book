@@ -1,5 +1,4 @@
 import React from "react";
-// import Hero from "../images/bountyHunter.jpg";
 import LoginForm from "./LoginForm.js";
 import SignupForm from "./SignupForm.js";
 

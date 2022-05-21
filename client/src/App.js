@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import HunterProfilePage from "./components/HunterProfilePage";
 import OpenBountiesPage from "./components/OpenBountiesPage";
+import LocationPage from "./components/LocationPage";
 
 import HomePage from "./components/HomePage";
 
@@ -18,6 +19,8 @@ function App() {
         return <HunterProfilePage />;
       case "open-bounties":
         return <OpenBountiesPage />;
+      case "location":
+        return <LocationPage />;
     }
   };
 

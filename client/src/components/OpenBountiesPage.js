@@ -43,10 +43,10 @@ const OpenBountiesPage = () => {
         />
         <OpenBounties
           image={require("../images/longNeckMS-6.jpg")}
-          name="Scott, Allen Daniel (aka: 'Big Al')"
+          name="Scott, Allen Daniel (aka: 'Stretch')"
           details="https://google.com"
-          description="43 year old white male | 6ft 5in. | 325lbs.  Charged with Attemped Murder. Skipped $1,000,000 bond.  Arrested in
-                      Houston, TX on 07/12/2015.  Last seen in Pheonix, Az on 11/30/2020."
+          description="43 year old white male | 6ft 5in. | 140lbs.  Charged with Criminal Possession with Intent. Skipped $1,000,000 bond.  
+                      Arrested in Houston, TX on 07/12/2015.  Last seen in Pheonix, AZ on 11/30/2020."
         />
       </div>{" "}
     </section>

@@ -1,6 +1,4 @@
 import React from "react";
-import HunterMenu from "./HunterMenu";
-import BountiesMenu from "./BountiesMenu";
 import SignUpForm from "./SignupForm";
 import LoginForm from "./LoginForm";
 
@@ -11,12 +9,13 @@ function Navbar(props) {
 
   return (
     <div className="header-content">
-      <h1 className="header">BountyBook</h1>
-      <div className="header-menu">
-        <HunterMenu />
-        <BountiesMenu />
-      </div>
-      <nav className="pli">
+      <h1
+        className={currentTab === "BOUNTYBOOK" ? "navActive" : "header"}
+        onClick={() => setCurrentTab("home")}
+      >
+        BountyBook
+      </h1>
+      <nav className="pli header-menu">
         <ul>
           <li className={currentTab === "Find a Hunter" ? "navActive" : "mx-2"}>
             <span onClick={() => setCurrentTab("profile")}>Find A Hunter</span>
@@ -24,6 +23,13 @@ function Navbar(props) {
           <li className={currentTab === "Open Bounties" ? "navActive" : "mx-2"}>
             <span onClick={() => setCurrentTab("open-bounties")}>
               Open Bounties
+            </span>
+          </li>
+          <li
+            className={currentTab === "Search By State" ? "navActive" : "mx-2"}
+          >
+            <span onClick={() => setCurrentTab("location")}>
+              Search By State
             </span>
           </li>
         </ul>
