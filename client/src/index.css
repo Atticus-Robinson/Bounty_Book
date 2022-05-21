@@ -546,3 +546,34 @@ h6 {
   font-weight: 300;
   font-style: italic;
 }
+
+.location {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 100px 20px 40px 20px;
+  background-color: #000;
+  background-image:url('./images/bountyHunter.jpg');
+  background-repeat: no-repeat;
+  background-size: 1600px 800px;
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+.location {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.location::-webkit-scrollbar {
+  display: none;
+}
+
+path {
+  pointer-events: all;
+}
+
+path:hover {
+  opacity: 0.50;
+  cursor: pointer;
+}
