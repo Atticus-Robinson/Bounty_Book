@@ -46,13 +46,12 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
-    // Add book to savedBooks
-    saveBook: async (parent, { input }, context) => {
-      // Destructuring input type variable further
+
+    addPost: async (parent, { input }, context) => {
       if (context.user) {
         const updatedUser = await User.findOneAndUpdate(
           { _id: context.user._id },
-          { $addToSet: { savedBooks: input } },
+          { $addToSet: { posts: input } },
           { new: true, runValidators: true }
         );
 
@@ -61,12 +60,12 @@ const resolvers = {
 
       throw new AuthenticationError("You need to be logged in");
     },
-    // Remove a book from savedBooks by bookId
-    removeBook: async (parent, { bookId }, context) => {
+
+    removePost: async (parent, { postId }, context) => {
       if (context.user) {
         const updatedUser = await User.findOneAndUpdate(
           { _id: context.user._id },
-          { $pull: { savedBooks: { bookId } } },
+          { $pull: { posts: { postId } } },
           { new: true }
         );
 

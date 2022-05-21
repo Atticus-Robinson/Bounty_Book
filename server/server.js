@@ -20,7 +20,6 @@ const startServer = async () => {
   await server.start();
   // Integrating the server with the Express app
   server.applyMiddleware({ app });
-  // Logging where it can be tested
   console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
 };
 
@@ -30,11 +29,9 @@ startServer();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// if we're in production, serve client/build as static assets
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "../client/build")));
 }
-// This and the above are for production only - Not development
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "../client/build/index.html"));
 });
