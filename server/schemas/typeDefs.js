@@ -1,35 +1,50 @@
-const { gql } = require("apollo-server-express");
+const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
   type User {
     _id: ID
+    username: String
     email: String
-    postCount: Int
-    savedPosts: [Post]
+    friendCount: Int
+    jobs: [Job]
+    friends: [Hunter]
   }
-  input PostInput {
-    postId: ID
-    postName: String
-    description: String
+
+  type Job {
+    _id: ID
+    thoughtText: String
+    createdAt: String
+    username: String
+    reactionCount: Int
+    reactions: [Reaction]
   }
-  type Post {
-    postId: ID
-    postName: String
-    description: String
+
+  type Reaction {
+    _id: ID
+    reactionBody: String
+    createdAt: String
+    username: String
   }
+
   type Auth {
     token: ID!
     user: User
   }
+
   type Query {
-    users: [User]
     me: User
+    users: [User]
+    user(username: String!): User
+    thoughts(username: String): [Thought]
+    thought(_id: ID!): Thought
   }
+
   type Mutation {
     login(email: String!, password: String!): Auth
-    addUser(email: String!, password: String!, username: String!): Auth
-    savePost(input: PostInput): User
-    removePost(postId: ID!): User
+    addUser(username: String!, email: String!, password: String!): Auth
+    addThought(thoughtText: String!): Thought
+    addReaction(thoughtId: ID!, reactionBody: String!): Thought
+    addFriend(friendId: ID!): User
   }
 `;
 
