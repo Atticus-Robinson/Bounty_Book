@@ -21,6 +21,10 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
+    bountyHunter: {
+      type: Boolean,
+      required: true,
+    },
     // set savedBooks to be an array of data that adheres to the postSchema
     postedBounties: [postSchema],
   },
