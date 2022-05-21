@@ -1,7 +1,6 @@
 const { Schema, model } = require("mongoose");
 const dateFormat = require("../utils/dateFormat");
 
-// This is a subdocument schema, it won't become its own model but we'll use it as the schema for the User's `savedBooks` array in User.js
 const PostSchema = new Schema(
   {
     bountyName: {
@@ -9,10 +8,14 @@ const PostSchema = new Schema(
       required: true,
       trim: true,
     },
-    createdBy: {
+    description: {
       type: String,
       required: true,
-      trim: true,
+      trin: true,
+    },
+    createdBy: {
+      type: Schema.Types.ObjectId,
+      ref: "User",
     },
     createdAt: {
       type: Date,
