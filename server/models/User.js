@@ -26,7 +26,7 @@ const UserSchema = new Schema(
       required: true,
       trin: true,
     },
-    bounties: [
+    posts: [
       {
         type: Schema.Types.ObjectId,
         ref: "Post",
