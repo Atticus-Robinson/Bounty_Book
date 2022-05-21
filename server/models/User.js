@@ -16,6 +16,11 @@ const UserSchema = new Schema(
       type: String,
       required: false,
     },
+    desciption: {
+      type: String,
+      required: true,
+      trin: true,
+    },
     bounties: [
       {
         type: Schema.Types.ObjectId,
