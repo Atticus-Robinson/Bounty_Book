@@ -2,269 +2,271 @@ import React, { Component } from "react";
 import "../index.css";
 import USAMap from "react-usa-map";
 
+// Location Page functionality and custom color with clickHandler
 class LocationPage extends Component {
-  /* mandatory */
+  // mapHandler for functionality and logged U.S. State info
   mapHandler = (event) => {
-    alert(event.target.dataset.name);
+    console.log(event.target.dataset.name);
   };
 
-  /* optional customization of filling per state and calling custom callbacks per state */
+  // customization of filling per state and calling custom callbacks per state
   statesCustomConfig = () => {
     return {
       AL: {
         fill: "gray",
         clickHandler: (event) =>
-          console.log("Custom handler for AL", event.target.dataset),
+          console.log("Custom handler for ALABAMA", event.target.dataset),
       },
       AK: {
         fill: "gray",
         clickHandler: (event) =>
-          console.log("Custom handler for AK", event.target.dataset),
+          console.log("Custom handler for ALASKA", event.target.dataset),
       },
       AZ: {
         fill: "gray",
         clickHandler: (event) =>
-          console.log("Custom handler for AZ", event.target.dataset),
+          console.log("Custom handler for ARIZONA", event.target.dataset),
       },
       AR: {
         fill: "gray",
         clickHandler: (event) =>
-          console.log("Custom handler for AR", event.target.dataset),
+          console.log("Custom handler for ARKANSAS", event.target.dataset),
       },
       CA: {
         fill: "gray",
         clickHandler: (event) =>
-          console.log("Custom handler for CA", event.target.dataset),
+          console.log("Custom handler for CALIFORNIA", event.target.dataset),
       },
       CO: {
         fill: "gray",
         clickHandler: (event) =>
-          console.log("Custom handler for CO", event.target.dataset),
+          console.log("Custom handler for COLORADO", event.target.dataset),
       },
       CT: {
         fill: "gray",
         clickHandler: (event) =>
-          console.log("Custom handler for CT", event.target.dataset),
+          console.log("Custom handler for CONNECTICUT", event.target.dataset),
       },
       DE: {
         fill: "gray",
         clickHandler: (event) =>
-          console.log("Custom handler for DE", event.target.dataset),
+          console.log("Custom handler for DELAWARE", event.target.dataset),
       },
       FL: {
         fill: "gray",
         clickHandler: (event) =>
-          console.log("Custom handler for FL", event.target.dataset),
+          console.log("Custom handler for FLORIDA", event.target.dataset),
       },
       GA: {
         fill: "gray",
         clickHandler: (event) =>
-          console.log("Custom handler for GA", event.target.dataset),
-      },
-      GA: {
-        fill: "gray",
-        clickHandler: (event) =>
-          console.log("Custom handler for NJ", event.target.dataset),
+          console.log("Custom handler for GEORGIA", event.target.dataset),
       },
       HI: {
         fill: "gray",
         clickHandler: (event) =>
-          console.log("Custom handler for HI", event.target.dataset),
+          console.log("Custom handler for HAWAII", event.target.dataset),
       },
       ID: {
         fill: "gray",
         clickHandler: (event) =>
-          console.log("Custom handler for ID", event.target.dataset),
+          console.log("Custom handler for IDAHO", event.target.dataset),
       },
       IL: {
         fill: "gray",
         clickHandler: (event) =>
-          console.log("Custom handler for IL", event.target.dataset),
+          console.log("Custom handler for ILLINOIS", event.target.dataset),
       },
       IN: {
         fill: "gray",
         clickHandler: (event) =>
-          console.log("Custom handler for IN", event.target.dataset),
+          console.log("Custom handler for INDIANA", event.target.dataset),
       },
       IA: {
         fill: "gray",
         clickHandler: (event) =>
-          console.log("Custom handler for IA", event.target.dataset),
+          console.log("Custom handler for IOWA", event.target.dataset),
       },
       KS: {
         fill: "gray",
         clickHandler: (event) =>
-          console.log("Custom handler for KS", event.target.dataset),
+          console.log("Custom handler for KANSAS", event.target.dataset),
       },
       KY: {
         fill: "gray",
         clickHandler: (event) =>
-          console.log("Custom handler for KY", event.target.dataset),
+          console.log("Custom handler for KENTUCKY", event.target.dataset),
       },
       LA: {
         fill: "gray",
         clickHandler: (event) =>
-          console.log("Custom handler for LA", event.target.dataset),
+          console.log("Custom handler for LOUISIANA", event.target.dataset),
       },
       ME: {
         fill: "gray",
         clickHandler: (event) =>
-          console.log("Custom handler for ME", event.target.dataset),
+          console.log("Custom handler for MAINE", event.target.dataset),
       },
       MD: {
         fill: "gray",
         clickHandler: (event) =>
-          console.log("Custom handler for MD", event.target.dataset),
+          console.log("Custom handler for MARYLAND", event.target.dataset),
       },
       MA: {
         fill: "gray",
         clickHandler: (event) =>
-          console.log("Custom handler for MA", event.target.dataset),
+          console.log("Custom handler for MASSACHUSETTS", event.target.dataset),
       },
       MI: {
         fill: "gray",
         clickHandler: (event) =>
-          console.log("Custom handler for MI", event.target.dataset),
+          console.log("Custom handler for MICHIGAN", event.target.dataset),
       },
       MN: {
         fill: "gray",
         clickHandler: (event) =>
-          console.log("Custom handler for MN", event.target.dataset),
+          console.log("Custom handler for MINNESOTA", event.target.dataset),
       },
       MS: {
         fill: "gray",
         clickHandler: (event) =>
-          console.log("Custom handler for MS", event.target.dataset),
+          console.log("Custom handler for MISSISSIPPI", event.target.dataset),
       },
       MO: {
         fill: "gray",
         clickHandler: (event) =>
-          console.log("Custom handler for MO", event.target.dataset),
+          console.log("Custom handler for MISSOURI", event.target.dataset),
       },
       MT: {
         fill: "gray",
         clickHandler: (event) =>
-          console.log("Custom handler for MT", event.target.dataset),
+          console.log("Custom handler for MONTANA", event.target.dataset),
       },
       NE: {
         fill: "gray",
         clickHandler: (event) =>
-          console.log("Custom handler for NE", event.target.dataset),
+          console.log("Custom handler for NEBRASKA", event.target.dataset),
       },
       NV: {
         fill: "gray",
         clickHandler: (event) =>
-          console.log("Custom handler for NV", event.target.dataset),
+          console.log("Custom handler for NEVADA", event.target.dataset),
       },
       NH: {
         fill: "gray",
         clickHandler: (event) =>
-          console.log("Custom handler for NH", event.target.dataset),
+          console.log("Custom handler for NEW HAMPSHIRE", event.target.dataset),
       },
       NJ: {
         fill: "gray",
         clickHandler: (event) =>
-          console.log("Custom handler for NJ", event.target.dataset),
+          console.log("Custom handler for NEW JERSEY", event.target.dataset),
       },
       NM: {
         fill: "gray",
         clickHandler: (event) =>
-          console.log("Custom handler for NM", event.target.dataset),
+          console.log("Custom handler for NEW MEXICO", event.target.dataset),
       },
       NY: {
         fill: "gray",
         clickHandler: (event) =>
-          console.log("Custom handler for NY", event.target.dataset),
+          console.log("Custom handler for NEW YORK", event.target.dataset),
       },
       NC: {
         fill: "gray",
         clickHandler: (event) =>
-          console.log("Custom handler for NC", event.target.dataset),
+          console.log(
+            "Custom handler for NORTH CAROLINA",
+            event.target.dataset
+          ),
       },
       ND: {
         fill: "gray",
         clickHandler: (event) =>
-          console.log("Custom handler for ND", event.target.dataset),
+          console.log("Custom handler for NORTH DAKOTA", event.target.dataset),
       },
       OH: {
         fill: "gray",
         clickHandler: (event) =>
-          console.log("Custom handler for OH", event.target.dataset),
+          console.log("Custom handler for OHIO", event.target.dataset),
       },
       OK: {
         fill: "gray",
         clickHandler: (event) =>
-          console.log("Custom handler for OK", event.target.dataset),
+          console.log("Custom handler for OKLAHOMA", event.target.dataset),
       },
       OR: {
         fill: "gray",
         clickHandler: (event) =>
-          console.log("Custom handler for OR", event.target.dataset),
+          console.log("Custom handler for OREGON", event.target.dataset),
       },
       PA: {
         fill: "gray",
         clickHandler: (event) =>
-          console.log("Custom handler for PA", event.target.dataset),
+          console.log("Custom handler for PENNSYLVANIA", event.target.dataset),
       },
       RI: {
         fill: "gray",
         clickHandler: (event) =>
-          console.log("Custom handler for RI", event.target.dataset),
+          console.log("Custom handler for RHODE ISLAND", event.target.dataset),
       },
       SC: {
         fill: "gray",
         clickHandler: (event) =>
-          console.log("Custom handler for SC", event.target.dataset),
+          console.log(
+            "Custom handler for SOUTH CAROLINA",
+            event.target.dataset
+          ),
       },
       SD: {
         fill: "gray",
         clickHandler: (event) =>
-          console.log("Custom handler for SD", event.target.dataset),
+          console.log("Custom handler for SOUTH DAKOTA", event.target.dataset),
       },
       TN: {
         fill: "gray",
         clickHandler: (event) =>
-          console.log("Custom handler for TN", event.target.dataset),
+          console.log("Custom handler for TENNESSEE", event.target.dataset),
       },
       TX: {
         fill: "gray",
         clickHandler: (event) =>
-          console.log("Custom handler for TX", event.target.dataset),
+          console.log("Custom handler for TEXAS", event.target.dataset),
       },
       UT: {
         fill: "gray",
         clickHandler: (event) =>
-          console.log("Custom handler for UT", event.target.dataset),
+          console.log("Custom handler for UTAH", event.target.dataset),
       },
       VT: {
         fill: "gray",
         clickHandler: (event) =>
-          console.log("Custom handler for VT", event.target.dataset),
+          console.log("Custom handler for VERMONT", event.target.dataset),
       },
       VA: {
         fill: "gray",
         clickHandler: (event) =>
-          console.log("Custom handler for VA", event.target.dataset),
+          console.log("Custom handler for VIRGINIA", event.target.dataset),
       },
       WA: {
         fill: "gray",
         clickHandler: (event) =>
-          console.log("Custom handler for WA", event.target.dataset),
+          console.log("Custom handler for WASHINGTON", event.target.dataset),
       },
       WV: {
         fill: "gray",
         clickHandler: (event) =>
-          console.log("Custom handler for WV", event.target.dataset),
+          console.log("Custom handler for WEST VIRGINIA", event.target.dataset),
       },
       WI: {
         fill: "gray",
         clickHandler: (event) =>
-          console.log("Custom handler for WI", event.target.dataset),
+          console.log("Custom handler for WISCONSIN", event.target.dataset),
       },
       WY: {
         fill: "gray",
         clickHandler: (event) =>
-          console.log("Custom handler for WY", event.target.dataset),
+          console.log("Custom handler for WYOMING", event.target.dataset),
       },
     };
   };

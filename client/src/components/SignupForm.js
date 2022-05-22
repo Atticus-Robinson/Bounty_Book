@@ -24,7 +24,7 @@ const SignupForm = () => {
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
-    // check if form has everything (as per react-bootstrap docs)
+    // check form validity before moving on
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
       event.preventDefault();
@@ -55,16 +55,16 @@ const SignupForm = () => {
 
   return (
     <div className="signup-form">
-      {/* This is needed for the validation functionality above */}
+      {/* ensures validation requirement is fulfilled  */}
       <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
-        {/* show alert if server response is bad */}
+        {/* bootstrap alert if validation fails */}
         <Alert
           dismissible
           onClose={() => setShowAlert(false)}
           show={showAlert}
           variant="danger"
         >
-          Something went wrong with your signup!
+          UH OH! Please check your credentials, and try again.
         </Alert>
 
         <Form.Group>

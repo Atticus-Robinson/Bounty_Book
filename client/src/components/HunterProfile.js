@@ -1,6 +1,7 @@
 import React from "react";
 import { FaGlobe } from "react-icons/fa";
 
+// sturcture for Hunter Profile Page using properties from HunterProfilePage.js
 export default function Project(props) {
   console.log(props);
   return (

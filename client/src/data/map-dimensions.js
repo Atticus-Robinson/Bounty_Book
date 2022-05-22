@@ -1,5 +1,5 @@
+// required data per state image in overall map for UI funtionality
 function data() {
-
   return {
     AK: {
       dimensions:

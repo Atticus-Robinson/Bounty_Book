@@ -105,22 +105,14 @@ span:hover {
   display: none;
 }
 
-/* ________________________________________Login Form_________________________________________ */
+/* ________________________________________LOGIN/SIGNUP_________________________________________ */
 
-.login-form {
+.login-form, .signup-form {
   color: var(--my-white);
   height: 65%;
   width: 50%;
   padding: 20px 20px;
-  margin: 20px 100px 20px 100px;
-}
-
-.signup-form {
-  color: var(--my-white);
-  height: 65%;
-  width: 50%;
-  padding: 20px 20px;
-  margin: 20px 80px 20px 80px;
+  margin: 20px 100px 15px 100px;
 }
 
 .access-title {
@@ -540,11 +532,6 @@ h4,
 h5,
 h6 {
   font-family: 'Rubik Mono One', sans-serif;
-}
-
-.small {
-  font-weight: 300;
-  font-style: italic;
 }
 
 /* ______________________________________________________LOCATION______________________________________________________ */

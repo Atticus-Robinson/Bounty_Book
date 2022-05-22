@@ -1,5 +1,6 @@
 import React from "react";
 
+// structure for Open Bounties Page using properties from OpenBountiesPage.js
 export default function OpenBounties(props) {
   console.log(props);
   return (
