@@ -1,6 +1,529 @@
-body {
-  font-family: 'Rubik', sans-serif;
+* {
+  box-sizing: border-box;
 }
+
+:root {
+  --primary-red: #9b0101;
+  --hover-red: #cf3636;
+  --my-white: #f5f5f5;
+}
+
+body {
+  display: block;
+  font-family: 'Rubik', sans-serif;
+  margin: 0;
+  height: 100vh;
+  color: #000;
+}
+
+/* ____________________________________________HEADER_____________________________________________ */
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  color: var(--primary-red);
+  padding: 50px;
+  letter-spacing: 10px;
+  cursor: pointer;
+}
+
+.header:hover {
+  color: var(--hover-red);
+  transition: .4s;
+}
+
+.header-content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  color: var(--my-white);
+  background: #000;
+  border-bottom: 1px solid darkgray;
+  padding-left: 20px;
+  width: 100%;
+  height: 150px;
+}
+
+.header-menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-top: 0px;
+  padding-right: 25px;
+  background-color: transparent;
+  overflow: hidden;
+}
+
+.header-menu ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  margin: 0;
+  padding-left: 16px;
+  width: 35rem;;
+}
+
+.mx-2, span {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font-size: 22px;
+  letter-spacing: 2px;
+  color: var(--my-white);
+  background-color: transparent;
+  cursor: pointer;
+}
+
+span:hover {
+  color: var(--primary-red);
+  transition: .4s;
+}
+
+/* __________________________________________CONTENT______________________________________________ */
+
+.content-window {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 100px 20px 40px 20px;
+  background-color: #000;
+  background-image:url('./images/bountyHunter.jpg');
+  background-repeat: no-repeat;
+  background-size: 1600px 800px;
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+.content-window {
+  -ms-overflow-style: non;
+  scrollbar-width: none;
+}
+
+.content-window::-webkit-scrollbar {
+  display: none;
+}
+
+/* ________________________________________LOGIN/SIGNUP_________________________________________ */
+
+.login-form, .signup-form {
+  color: var(--my-white);
+  height: 65%;
+  width: 50%;
+  padding: 20px 20px;
+  margin: 20px 100px 15px 100px;
+}
+
+.access-title {
+  color: var(--my-white);
+  font-size: 30px;
+  font-family: sans-serif;
+  letter-spacing: 6px;
+  padding-bottom: 18px;
+}
+
+.btn {
+  color: var(--my-white);
+  background: var(--primary-red);
+  width: 100%;
+  border: 1px solid var(--primary-red);
+  border-radius: 5px;
+}
+
+.btn:hover {
+  color: white;
+  background: var(--hover-red);
+  transition: .4s;
+  font-size: 18px
+}
+
+/* _____________________________________HUNTER PROFILE PAGE____________________________________ */
+
+.profiles, .bounties {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 100px 20px 40px 20px;
+  background-color: #000;
+  background-image:url('./images/bountyHunter.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  overflow-y: scroll;
+  gap: 40px;
+  overflow-y: scroll;
+}
+
+.profiles {
+  -ms-overflow-style: non;
+  scrollbar-width: none;
+}
+
+.profiles::-webkit-scrollbar {
+  display: none;
+}
+
+.profile-title {
+  display: inline-block;
+  text-align: center;
+  color: #000;
+  background: #000;
+  font-size: 18px;
+  padding-top: 8px;
+  letter-spacing: .2rem;
+}
+
+.profile-title h1 {
+  font-size: 24px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: var(--primary-red);
+  background: #000;
+  border-bottom: 1px solid black;
+  border-radius: 15px;
+  margin-bottom: 0;
+}
+
+.profile-card {
+  color: var(--my-white);
+  flex-basis: 225px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  padding: 13px;
+  padding-bottom: 20px;
+  background-color: transparent;
+}
+
+.profile-card img {
+  width: 300px;
+  height: auto;
+  align-self: center;
+  border-radius: 5px;
+  padding-bottom: 12px;
+  object-fit: cover;
+}
+
+.profile-card h3 {
+  font-family: sans-serif;
+  font-size: 28px;
+}
+
+.info-group {
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.info-group > p {
+  font-size: 18px;
+  letter-spacing: 1px;
+  line-height: 1.5;
+  margin-block: 3px;
+  color: var(--my-white);
+}
+
+.profile-link a {
+  color: darkgray;
+  padding: 8px;
+  font-size: 46px;
+}
+
+.profile-link a:hover {
+  color: var(--primary-red);
+  transition: .4s;
+}
+
+.pli li {
+  list-style-type: none;
+  color: rgb(75, 75, 75);
+  cursor: pointer;
+} 
+
+/* _______________________________________OPEN BOUNTIES________________________________________ */
+
+.bounties {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 100px 20px 40px 20px;
+  background-color: #000;
+  background-image:url('./images/bountyHunter.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  overflow-y: scroll;
+  gap: 40px;
+  overflow-y: scroll;
+}
+
+.bounties {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.bounties::-webkit-scrollbar {
+  display: none;
+}
+
+.open-bounties-title {
+  display: inline-block;
+  text-align: center;
+  color: #000;
+  background: #000;
+  font-size: 18px;
+  padding-top: 8px;
+  letter-spacing: .2rem;
+}
+
+.open-bounties-title h1 {
+  font-size: 24px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: var(--primary-red);
+  background: #000;
+  border-bottom: 1px solid black;
+  border-radius: 15px;
+  margin-bottom: 0;
+}
+
+.bounties-card {
+  flex-basis: 225px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  padding: 13px;
+  padding-bottom: 20px;
+  background-color: transparent;
+}
+
+.bounties-card img {
+  width: 300px;
+  height: auto;
+  align-self: center;
+  border-radius: 5px;
+  padding-bottom: 12px;
+  object-fit: cover;
+}
+
+.bounties-card h3 {
+  color: var(--my-white);
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 28px;
+}
+
+.info-group {
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.info-group > p {
+  font-size: 18px;
+  letter-spacing: 1px;
+  line-height: 1.5;
+  margin-block: 3px;
+  color: var(--my-white);
+}
+
+.bounties-link a {
+  color: var(--primary-red);
+  font-size: 22px;
+  font-weight: bolder;
+}
+
+.bounties-link a:hover {
+  color: var(--hover-red);
+  transition: .4s;
+  text-decoration-line: none;
+}
+
+.pli li {
+  list-style-type: none;
+  color: rgb(75, 75, 75);
+  cursor: pointer;
+} 
+
+
+/* ___________________________________________FOOTER___________________________________________*/
+
+.footer {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  letter-spacing: 3px;
+  padding: 20px 50px 0 50px;
+  margin-bottom: 0;
+  color: gray;
+  background-color: #000;
+}
+
+.footer.container-fluid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.footer  ul {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+}
+
+.footer-icons {
+  display: flex;
+  justify-content: space-around;
+  font-size: 24px;
+  width: 150px;
+  padding: 0
+}
+
+.footer a {
+  color: gray;
+  font-size: 28px;
+}
+
+.footer a:hover {
+  color: var(--primary-red);
+  transition: .4s;
+}
+
+.svg {
+  position: relative;
+  background-color: transparent;
+  width: 30px;
+  margin: 2px;
+  padding: 1px;
+}
+
+.line-position {
+  position: relative;
+  line-height: 1.5;
+  bottom: 12px;
+}
+
+/* ______________________________________MEDIA QUERIES_____________________________________ */
+
+@media only screen and (max-width: 1028px) {
+
+  html, body {
+    display: flex;
+    flex-direction: column;
+    background: #000;
+    flex-direction: row;
+    margin-bottom: 0;
+    height: 100vh;
+  }
+
+  .header {
+    font-size: 45px;
+    padding-bottom: 0;
+    padding-left: 35px;
+  }
+
+  .header-content {
+    display: flex;
+    padding-left: 0px;
+    justify-content: space-around;
+    border: none;
+    height: 30vh;
+  }
+
+  .header-menu {
+    display: flex;
+    flex-direction: row;
+    padding-top: 12px;
+    padding-left: 45px;
+    padding-bottom: 50px;
+    justify-content: center;
+  }
+
+  .hunter-title, .bounties-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-center;
+    font-size: 26px;
+    margin: 0;
+    padding-left: 0;
+  }
+
+  .hunter-container, .bounties-container {
+    padding-top: 0;
+    width: 72px;
+  }
+
+  .hunter-list-options, .bounties-list-options {
+    font-size: 16px;
+    padding-left: 0;
+    margin: 0;
+  }
+
+  .content-window {
+    padding: 0px;
+    padding-top: 40px;
+    overflow: scroll;
+    height: 100%;
+  }
+
+  .login-form {
+    display: block;
+    color: var(--my-white);
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .signup-form {
+    display: block;
+    color: var(--my-white);
+  }
+
+  .btn {
+    color: var(--my-white);
+    background: var(--primary-red);
+    width: 100%;
+    border: 1px solid var(--primary-red);
+    border-radius: 5px;
+  }
+
+  .footer {
+    display: flex;
+    margin-bottom: 0;
+  }
+
+  .footer.container-fluid {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 30px;
+    padding-left: 0;
+    padding-right: 0px;
+    flex-wrap: wrap;
+  }
+
+  .footer-icons {
+    margin: 0;
+    padding: 0;
+  }
+
+  .navbar-text {
+    margin: 0;
+    padding: 0;
+  }
+
+  .footer a {
+    font-size: 70px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+/* _________________________________________GLOBAL FONT______________________________________ */
 
 h1,
 h2,
@@ -11,7 +534,58 @@ h6 {
   font-family: 'Rubik Mono One', sans-serif;
 }
 
-.small {
-  font-weight: 300;
-  font-style: italic;
+/* ______________________________________________________LOCATION______________________________________________________ */
+
+.location {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 100px 20px 40px 20px;
+  background-color: #000;
+  background-image:url('./images/bountyHunter.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+  overflow-y: scroll;
+}
+
+.location {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.location::-webkit-scrollbar {
+  display: none;
+}
+
+.location-title {
+  display: inline-block;
+  text-align: center;
+  color: #000;
+  background: #000;
+  font-size: 18px;
+  padding-top: 8px;
+  width: 100%;
+  letter-spacing: .2rem;
+}
+
+.location-title h1 {
+  font-size: 24px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: var(--primary-red);
+  background: #000;
+  border-bottom: 1px solid black;
+  border-radius: 15px;
+  margin-bottom: 0;
+}
+
+path {
+  pointer-events: all;
+}
+
+path:hover {
+  opacity: 0.50;
+  cursor: pointer;
 }
