@@ -1,21 +1,40 @@
-import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import SearchBooks from './pages/SearchBooks';
-import SavedBooks from './pages/SavedBooks';
-import Navbar from './components/Navbar';
+// required dependencies for react usage
+import React, { useState } from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
+// imports each component for main page structure
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import HunterProfilePage from "./components/HunterProfilePage";
+import OpenBountiesPage from "./components/OpenBountiesPage";
+import LocationPage from "./components/LocationPage";
+
+import HomePage from "./components/HomePage";
 
 function App() {
+  const [currentTab, setCurrentTab] = useState("home");
+
+  // functionality to assign requested content/page for viewing
+  const renderTab = () => {
+    switch (currentTab) {
+      case "home":
+        return <HomePage />;
+      case "profile":
+        return <HunterProfilePage />;
+      case "open-bounties":
+        return <OpenBountiesPage />;
+      case "location":
+        return <LocationPage />;
+    }
+  };
+
+  // main page structure that calls the renderTab() function
   return (
-    <Router>
-      <>
-        <Navbar />
-        <Switch>
-          <Route exact path='/' component={SearchBooks} />
-          <Route exact path='/saved' component={SavedBooks} />
-          <Route render={() => <h1 className='display-2'>Wrong page!</h1>} />
-        </Switch>
-      </>
-    </Router>
+    <div>
+      <Navbar currentTab={currentTab} setCurrentTab={setCurrentTab} />
+      <main>{renderTab()}</main>
+      <Footer />
+    </div>
   );
 }
 
