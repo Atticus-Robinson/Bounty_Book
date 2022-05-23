@@ -19,7 +19,7 @@ const bountySchema = new Schema({
   },
   location: {
     type: String,
-    required: true.valueOf,
+    required: true,
     trim: true,
   },
 });

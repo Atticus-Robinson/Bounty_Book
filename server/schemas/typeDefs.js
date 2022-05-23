@@ -11,13 +11,12 @@ const typeDefs = gql`
     bounties: [Bounties]
   }
 
-  type Bounty {
+  type Bounties {
     _id: ID
-    thoughtText: String
-    createdAt: String
-    username: String
-    reactionCount: Int
-    reactions: [Reaction]
+    name: String
+    description: String
+    reward: Number
+    location: String
   }
 
   type Reaction {
