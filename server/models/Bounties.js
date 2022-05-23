@@ -13,7 +13,7 @@ const bountySchema = new Schema({
     trim: true,
   },
   reward: {
-    type: integer,
+    type: Number,
     required: true,
     trim: true,
   },

@@ -8,6 +8,10 @@ const UserSchema = new Schema(
       unique: true,
       match: [/.+@.+\..+/, "Must use a valid email address"],
     },
+    username: {
+      type: String,
+      required: true,
+    },
     password: {
       type: String,
       required: true,
@@ -20,16 +24,17 @@ const UserSchema = new Schema(
     picture: {
       type: String,
       required: false,
+      trim: true,
     },
     description: {
       type: String,
       required: true,
-      trin: true,
+      trim: true,
     },
-    posts: [
+    bounties: [
       {
         type: Schema.Types.ObjectId,
-        ref: "Post",
+        ref: "Bounties",
       },
     ],
   },

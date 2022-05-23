@@ -1,16 +1,17 @@
-const { gql } = require('apollo-server-express');
+const { gql } = require("apollo-server-express");
 
 const typeDefs = gql`
   type User {
     _id: ID
     username: String
     email: String
-    friendCount: Int
-    jobs: [Job]
-    friends: [Hunter]
+    status: Boolean
+    picture: String
+    description: String
+    bounties: [Bounties]
   }
 
-  type Job {
+  type Bounty {
     _id: ID
     thoughtText: String
     createdAt: String

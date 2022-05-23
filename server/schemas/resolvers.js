@@ -1,32 +1,32 @@
-const { AuthenticationError } = require('apollo-server-express');
-const { user, Bountiess } = require('../models');
-const { signToken } = require('../utils/auth');
+const { AuthenticationError } = require("apollo-server-express");
+const { User, Bountiess } = require("../models");
+const { signToken } = require("../utils/auth");
 
 const resolvers = {
   Query: {
     me: async (parent, args, context) => {
       if (context.user) {
-        const userData = await user.findOne({ _id: context.user._id })
-          .select('-__v -password')
-          .populate('Bountiess')
-          .populate('Bountiess');
+        const userData = await user
+          .findOne({ _id: context.user._id })
+          .select("-__v -password")
+          .populate("Bountiess")
+          .populate("Bountiess");
 
         return userData;
       }
 
-      throw new AuthenticationError('Not logged in');
+      throw new AuthenticationError("Not logged in");
     },
     Users: async () => {
       return User.find()
-        .select('-__v -password')
-        .populate('Bountiess')
-        .populate('friends');
+        .select("-__v -password")
+        .populate("Bountiess")
+        .populate("friends");
     },
     user: async (parent, { username }) => {
       return User.findOne({ username })
-        .select('-__v -password')
-        .populate('friends')
-        .populate('Bountiess');
+        .select("-__v -password")
+        .populate("Bountiess");
     },
     Bounties: async (parent, { username }) => {
       const params = username ? { username } : {};
@@ -34,7 +34,7 @@ const resolvers = {
     },
     Bounties: async (parent, { _id }) => {
       return Bounties.findOne({ _id });
-    }
+    },
   },
 
   Mutation: {
