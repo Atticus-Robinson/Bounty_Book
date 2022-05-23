@@ -1,5 +1,8 @@
+// required dependencies for react usage
 import React, { useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
+// imports each component for main page structure
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import HunterProfilePage from "./components/HunterProfilePage";
@@ -11,6 +14,7 @@ import HomePage from "./components/HomePage";
 function App() {
   const [currentTab, setCurrentTab] = useState("home");
 
+  // functionality to assign requested content/page for viewing
   const renderTab = () => {
     switch (currentTab) {
       case "home":
@@ -24,6 +28,7 @@ function App() {
     }
   };
 
+  // main page structure that calls the renderTab() function
   return (
     <div>
       <Navbar currentTab={currentTab} setCurrentTab={setCurrentTab} />

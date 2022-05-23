@@ -1,6 +1,9 @@
 import React from "react";
+
+// imports OpenBounties.js file for overall page struture
 import OpenBounties from "./OpenBounties.js";
 
+// structure of main content and it's properties for the Open Bounties Page
 const OpenBountiesPage = () => {
   return (
     <section className="open-bounties-title" id="open-bounties">

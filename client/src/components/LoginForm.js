@@ -18,7 +18,7 @@ const LoginForm = () => {
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
-    // check if form has everything (as per react-bootstrap docs)
+    // checks validity of form befor moving on
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
       event.preventDefault();
@@ -49,7 +49,6 @@ const LoginForm = () => {
 
   return (
     <div className="login-form">
-      
       <Form
         className="form"
         noValidate
@@ -62,10 +61,10 @@ const LoginForm = () => {
           show={showAlert}
           variant="danger"
         >
-          Something went wrong with your login credentials!
+          UH OH! Please check your credentials, and try again.
         </Alert>
         <Form.Group>
-        <h3 className="access-title">Login</h3>
+          <h3 className="access-title">Login</h3>
           <Form.Label htmlFor="email">Email</Form.Label>
           <Form.Control
             type="text"

@@ -1,6 +1,9 @@
 import React from "react";
+
+// imports HunterProfile.js for the Hunter Profile Page structure
 import HunterProfile from "./HunterProfile.js";
 
+// Hunter Profile Page properties to be used with page structure assigned by HunterProfile.js
 const HunterProfilePage = () => {
   return (
     <section className="profile-title" id="profile">

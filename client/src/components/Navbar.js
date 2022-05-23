@@ -1,9 +1,7 @@
 import React from "react";
-import SignUpForm from "./SignupForm";
-import LoginForm from "./LoginForm";
-
 import Auth from "../utils/auth";
 
+// Constant Navigation/Header that will appear on every page
 function Navbar(props) {
   const { currentTab, setCurrentTab } = props;
 
