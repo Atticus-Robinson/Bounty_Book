@@ -57,34 +57,6 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
-
-    addPost: async (parent, { input }, context) => {
-      if (context.user) {
-        const updatedUser = await User.findOneAndUpdate(
-          { _id: context.user._id },
-          { $addToSet: { posts: input } },
-          { new: true, runValidators: true }
-        );
-
-        return updatedUser;
-      }
-
-      throw new AuthenticationError("You need to be logged in");
-    },
-
-    removePost: async (parent, { postId }, context) => {
-      if (context.user) {
-        const updatedUser = await User.findOneAndUpdate(
-          { _id: context.user._id },
-          { $pull: { posts: { postId } } },
-          { new: true }
-        );
-
-        return updatedUser;
-      }
-
-      throw new AuthenticationError("You need to be logged in");
-    },
   },
 };
 
