@@ -31,10 +31,10 @@ const UserSchema = new Schema(
       required: true,
       trim: true,
     },
-    bounties: [
+    bounty: [
       {
         type: Schema.Types.ObjectId,
-        ref: "Bounties",
+        ref: "bounty",
       },
     ],
   },

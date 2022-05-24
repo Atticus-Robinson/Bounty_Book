@@ -8,10 +8,10 @@ const typeDefs = gql`
     status: Boolean
     picture: String
     description: String
-    bounties: [Bounties]
+    bounty: [bounty]
   }
 
-  type Bounties {
+  type bounty {
     _id: ID!
     name: String
     description: String
