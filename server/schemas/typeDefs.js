@@ -8,10 +8,10 @@ const typeDefs = gql`
     status: Boolean
     picture: String
     description: String
-    bounty: [bounty]
+    bounty: [Bounty]
   }
 
-  type bounty {
+  type Bounty {
     _id: ID!
     name: String
     description: String
@@ -27,6 +27,8 @@ const typeDefs = gql`
   type Query {
     users: [User]
     user(id: ID!): User
+    bounties: [Bounty]
+    bounty(id: ID!): Bounty
     me: User
   }
 

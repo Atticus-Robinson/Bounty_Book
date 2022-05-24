@@ -6,37 +6,36 @@ const resolvers = {
   Query: {
     me: async (parent, args, context) => {
       if (context.user) {
-        const userData = await user
-          .findOne({ _id: context.user._id })
+        const userData = await User.findOne({ _id: context.user._id })
           .select("-__v -password")
-          .populate("bounty")
+          .populate("bounty");
         return userData;
       }
 
       throw new AuthenticationError("Not logged in");
     },
-    Users: async () => {
-      return User.find()
-        .select("-__v -password")
-        .populate("bounty")
+    // Retrieves all users in the database
+    users: async (parent, args) => {
+      const users = await User.find({});
+      return users;
     },
     user: async (parent, { username }) => {
       return User.findOne({ username })
         .select("-__v -password")
         .populate("bounty");
     },
-    bounty: async (parent, { username }) => {
-      const params = username ? { username } : {};
-      return bounty.find(params).sort({ createdAt: -1 });
+    bounties: async (parent, args) => {
+      const bounties = await Bounty.find({});
+      return bounties;
     },
     bounty: async (parent, { _id }) => {
-      return bounty.findOne({ _id });
+      return Bounty.findById(_id);
     },
   },
 
   Mutation: {
     addUser: async (parent, args) => {
-      const user = await user.create(args);
+      const user = await User.create(args);
       const token = signToken(user);
 
       return { token, user };
@@ -49,7 +48,7 @@ const resolvers = {
         throw new AuthenticationError("Incorrect credentials");
       }
 
-      const correctPw = await user.isCorrectPassword(password);
+      const correctPw = await User.isCorrectPassword(password);
 
       if (!correctPw) {
         throw new AuthenticationError("Incorrect credentials");

@@ -34,7 +34,7 @@ const UserSchema = new Schema(
     bounty: [
       {
         type: Schema.Types.ObjectId,
-        ref: "bounty",
+        ref: "Bounty",
       },
     ],
   },
