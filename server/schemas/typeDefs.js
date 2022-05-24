@@ -19,13 +19,6 @@ const typeDefs = gql`
     location: String
   }
 
-  type Reaction {
-    _id: ID
-    reactionBody: String
-    createdAt: String
-    username: String
-  }
-
   type Auth {
     token: ID!
     user: User
@@ -35,8 +28,6 @@ const typeDefs = gql`
     me: User
     users: [User]
     user(username: String!): User
-    thoughts(username: String): [Thought]
-    thought(_id: ID!): Thought
   }
 
   type Mutation {

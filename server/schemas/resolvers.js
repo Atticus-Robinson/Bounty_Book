@@ -10,8 +10,6 @@ const resolvers = {
           .findOne({ _id: context.user._id })
           .select("-__v -password")
           .populate("Bounties")
-          .populate("Bounties");
-
         return userData;
       }
 
@@ -21,7 +19,6 @@ const resolvers = {
       return User.find()
         .select("-__v -password")
         .populate("Bounties")
-        .populate("friends");
     },
     user: async (parent, { username }) => {
       return User.findOne({ username })
