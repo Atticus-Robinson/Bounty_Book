@@ -57,6 +57,11 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
+    addBounty: async (parent, args) => {
+      const bounty = await Bounty.create(args);
+      
+      return bounty;
+    }
   },
 };
 
