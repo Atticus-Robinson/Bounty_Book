@@ -1,5 +1,5 @@
 const { AuthenticationError } = require("apollo-server-express");
-const { User, Bountiess } = require("../models");
+const { User, Bounties } = require("../models");
 const { signToken } = require("../utils/auth");
 
 const resolvers = {
@@ -9,8 +9,8 @@ const resolvers = {
         const userData = await user
           .findOne({ _id: context.user._id })
           .select("-__v -password")
-          .populate("Bountiess")
-          .populate("Bountiess");
+          .populate("Bounties")
+          .populate("Bounties");
 
         return userData;
       }
@@ -20,13 +20,13 @@ const resolvers = {
     Users: async () => {
       return User.find()
         .select("-__v -password")
-        .populate("Bountiess")
+        .populate("Bounties")
         .populate("friends");
     },
     user: async (parent, { username }) => {
       return User.findOne({ username })
         .select("-__v -password")
-        .populate("Bountiess");
+        .populate("Bounties");
     },
     Bounties: async (parent, { username }) => {
       const params = username ? { username } : {};
