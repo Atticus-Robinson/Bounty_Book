@@ -32,7 +32,7 @@ const resolvers = {
       const params = username ? { username } : {};
       return Bounties.find(params).sort({ createdAt: -1 });
     },
-    Bounties: async (parent, { _id }) => {
+    Bounty: async (parent, { _id }) => {
       return Bounties.findOne({ _id });
     },
   },
@@ -62,25 +62,31 @@ const resolvers = {
       return { token, user };
     },
 
-    addPost: async (parent, { input }, context) => {
+    logout: async ( parents, args, context ) => {
+
+    },
+
+    addBounty: async (parent, args, context) => {
       if (context.user) {
-        const updatedUser = await User.findOneAndUpdate(
-          { _id: context.user._id },
-          { $addToSet: { posts: input } },
+        const updatedBounties = await Bounties.create({ ...args },
           { new: true, runValidators: true }
         );
-
-        return updatedUser;
+        await User.findByIdAndUpdate(
+          { _id: context.user._id },
+          { $push: { bounties: bounty._id } },
+          { new: true }
+        );
+        return updatedBounties;
       }
 
       throw new AuthenticationError("You need to be logged in");
     },
 
-    removePost: async (parent, { postId }, context) => {
+    removeBounty: async (parent, { bountyId }, context) => {
       if (context.user) {
         const updatedUser = await User.findOneAndUpdate(
           { _id: context.user._id },
-          { $pull: { posts: { postId } } },
+          { $pull: { bounties: { bountyId } } },
           { new: true }
         );
 
