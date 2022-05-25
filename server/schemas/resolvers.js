@@ -40,27 +40,43 @@ const resolvers = {
 
       return { token, user };
     },
+    updateUser: async (parent, args) => {
+      const user = await User.findOne(args)
+    },
     // Login to an existing account - Only require email and password
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
 
       if (!user) {
-        throw new AuthenticationError("Incorrect credentials");
+        throw new AuthenticationError("No User Found");
       }
 
-      const correctPw = await User.isCorrectPassword(password);
+      const correctPw = await user.isCorrectPassword(password);
 
       if (!correctPw) {
-        throw new AuthenticationError("Incorrect credentials");
+        throw new AuthenticationError("Incorrect Password");
       }
       // Sign token using the user data and return it
       const token = signToken(user);
       return { token, user };
     },
-    addBounty: async (parent, args) => {
-      const bounty = await Bounty.create(args);
+
+    addBounty: async (parent, args, context) => {
+      if (context.user) {
+      const bounty = await Bounty.create({ ...args, username: context.user.username });
       
+      await User.findByIdAndUpdate(
+        { _id: context.user._id },
+        { $push: { bounty: bounty._id } },
+        { new: true }
+      );
       return bounty;
+      }
+    },
+    updateBounty: async (parent, {name, description, reward, location}) => {
+      const updatedBounty = await Bounty.findOneAndUpdate(
+
+      )
     }
   },
 };

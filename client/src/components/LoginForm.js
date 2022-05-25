@@ -1,12 +1,18 @@
 // see SignupForm.js for comments
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { Form, Button, Alert } from "react-bootstrap";
+import { useMutation } from '@apollo/client';
+import { LOGIN_USER } from '../utils/mutations';
 
-import { loginUser } from "../utils/API";
+
+
 import Auth from "../utils/auth";
 
-const LoginForm = () => {
+
+const LoginForm = (props) => {
   const [userFormData, setUserFormData] = useState({ email: "", password: "" });
+  const form = useRef();
+  const [loginUser, { error }] = useMutation(LOGIN_USER);
   const [validated] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
 
@@ -26,30 +32,25 @@ const LoginForm = () => {
     }
 
     try {
-      const response = await loginUser(userFormData);
-
-      if (!response.ok) {
-        throw new Error("something went wrong!");
-      }
-
-      const { token, user } = await response.json();
-      console.log(user);
-      Auth.login(token);
+      const { data } = await loginUser({
+        variables: { ... userFormData },
+      });
+      const token = JSON.stringify({ data });
+      console.log(token);
+      Auth.login(data.loginUser.token);
     } catch (err) {
       console.error(err);
       setShowAlert(true);
+      console.log('here we are')
     }
 
-    setUserFormData({
-      username: "",
-      email: "",
-      password: "",
-    });
+
   };
 
   return (
     <div className="login-form">
       <Form
+        ref={form}
         className="form"
         noValidate
         validated={validated}
