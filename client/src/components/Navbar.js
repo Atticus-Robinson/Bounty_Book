@@ -4,6 +4,10 @@ import Auth from "../utils/auth";
 // Constant Navigation/Header that will appear on every page
 function Navbar(props) {
   const { currentTab, setCurrentTab } = props;
+  const logout = event => {
+    event.preventDefault();
+    Auth.logout();
+  };
 
   return (
     <div className="header-content">
@@ -23,6 +27,7 @@ function Navbar(props) {
               Open Bounties
             </span>
           </li>
+
           <li
             className={currentTab === "Search By State" ? "navActive" : "mx-2"}
           >
@@ -30,6 +35,12 @@ function Navbar(props) {
               Search By State
             </span>
           </li>
+          {Auth.loggedIn() &&
+          (<li
+           className="mx-2">
+            <span onClick={logout} >Log Out</span>
+          </li>)
+          }
         </ul>
       </nav>
     </div>
